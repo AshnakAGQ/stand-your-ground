@@ -5,7 +5,6 @@ using UnityEngine;
 public class TowerPlacementUI : MonoBehaviour
 {
     SpriteRenderer sprite;
-    PolygonCollider2D collider;
     Vector3Int gridPosition;
     [SerializeField] bool canPlace;
 
@@ -14,9 +13,7 @@ public class TowerPlacementUI : MonoBehaviour
     void Start()
     {
         sprite = GetComponentInParent<SpriteRenderer>();
-        collider = GetComponentInParent<PolygonCollider2D>();
         sprite.color = new Color(0, 0, 0, .5f);
-        collider.enabled = false;
     }
 
     // Update is called once per frame
@@ -38,7 +35,16 @@ public class TowerPlacementUI : MonoBehaviour
 
     void CheckPlace()
     {
-        canPlace = Physics.CheckSphere(gridPosition, .5f);
+        canPlace = true;
+
+        GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
+        foreach (GameObject tower in towers)
+        {
+            if (tower.transform.position == gridPosition)
+            {
+                canPlace = false;
+            }
+        }
     }
 
     void Place()
@@ -46,7 +52,6 @@ public class TowerPlacementUI : MonoBehaviour
         transform.position = gridPosition;
         sprite.color = new Color(255, 255, 255, 1f);
         GetComponentInParent<TowerAI>().enabled = true;
-        collider.enabled = true;
         Instantiate(Resources.Load("Tower"));
         enabled = false;
     }

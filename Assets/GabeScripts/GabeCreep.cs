@@ -23,6 +23,7 @@ public class GabeCreep : MonoBehaviour
     {
         progress += Time.deltaTime * speed;
         checkDeath();
+        move();
     }
 
     void Spawn()
@@ -38,5 +39,10 @@ public class GabeCreep : MonoBehaviour
             dead = true;
             Destroy(gameObject);
         }
+    }
+
+    void move()
+    {
+        
     }
 }

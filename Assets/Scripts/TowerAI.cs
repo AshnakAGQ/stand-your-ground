@@ -58,7 +58,7 @@ public class TowerAI : MonoBehaviour
 
     bool TargetInRange(GameObject target)
     {
-        return Vector3.Distance(target.transform.position, transform.position) <= range;
+        return Vector2.Distance(target.transform.position, transform.position) <= range;
     }
 
     GameObject FindTarget()

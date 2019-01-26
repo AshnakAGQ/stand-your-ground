@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcdaab39e3a7ea24d843e16ead2d371e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 100
 --- !u!114 &5181836904927891142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  dead: 0
   spawnPoint: {x: 0, y: 0}
 --- !u!50 &8734247442816676237
 Rigidbody2D:

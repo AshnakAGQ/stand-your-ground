@@ -7,7 +7,7 @@ public class CreepAI : MonoBehaviour
 {
     public float progress { get; private set; } = 0;
     [SerializeField] public float health = 100;
-    [SerializeField] protected float speed = 50;
+    [SerializeField] public float speed = 50;
     [SerializeField] public bool dead = false;
     protected bool spawned = false;
     [SerializeField] public Vector2 creepPosition;
@@ -16,7 +16,7 @@ public class CreepAI : MonoBehaviour
     public uint value = 1; 
     public Path[] paths;
     //public List<bool> counting = new List<bool>();
-    private bool[,] tileGrid = new bool[16,16];
+    private bool[,] tileGrid = new bool[20,20];
     [SerializeField] protected uint damage = 1;
 
 
@@ -26,10 +26,9 @@ public class CreepAI : MonoBehaviour
     {
         Spawn();
         paths = FindObjectsOfType<Path>();
-        int firstCount = 0;
         foreach (Path path in paths)
         {
-            tileGrid[int(path.tilePositionX), int(path.tilePositionY)] = false;
+            tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)] = false;
             
             
             
@@ -128,38 +127,38 @@ public class CreepAI : MonoBehaviour
         {
             if (path.GetComponent<Path>().tilePositionX == this.transform.position.x + 1
                 && path.GetComponent<Path>().tilePositionY == this.transform.position.y
-                && !counting[loopCount])
+                && !tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)])
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0) * speed * Time.deltaTime;
-                counting[loopCount] = true;
+                tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)] = true;
                 return;
             }
             else if (path.GetComponent<Path>().tilePositionX == this.transform.position.x - 1
                 && path.GetComponent<Path>().tilePositionY == this.transform.position.y
-                && !counting[loopCount])
+                && !!tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)])
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 0) * speed * Time.deltaTime;
-                counting[loopCount] = true;
+                tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)] = true;
                 return;
             }
             else if (path.GetComponent<Path>().tilePositionY == this.transform.position.y + 1
                 && path.GetComponent<Path>().tilePositionX == this.transform.position.x
-                && !counting[loopCount])
+                && !tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)])
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1) * speed * Time.deltaTime;
-                counting[loopCount] = true;
+                tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)] = true;
                 return;
             }
             else if (path.GetComponent<Path>().tilePositionY == this.transform.position.y - 1
                 && path.GetComponent<Path>().tilePositionX == this.transform.position.x
-                && !counting[loopCount])
+                && !tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)])
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, -1) * speed * Time.deltaTime;
-                counting[loopCount] = true;
+                tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)] = true;
                 return;
             }
             loopCount++;

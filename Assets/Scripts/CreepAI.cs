@@ -16,8 +16,7 @@ public class CreepAI : MonoBehaviour
     [SerializeField] protected bool reachingEnd;
     public uint value = 1; 
     public Path[] paths;
-    //public List<bool> counting = new List<bool>();
-    private bool[,] tileGrid = new bool[20,20];
+    private bool[,] tileGrid = new bool[20,10];
     [SerializeField] protected uint damage = 1;
 
 
@@ -30,15 +29,8 @@ public class CreepAI : MonoBehaviour
         foreach (Path path in paths)
         {
             tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)] = false;
-            
-            
-            
-            //if (firstCount != 0)
-            //{
-                //counting.Add(false);
-            //}
-            //firstCount++;
         }
+        tileGrid[Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)] = true;
     }
 
 
@@ -137,7 +129,7 @@ public class CreepAI : MonoBehaviour
             }
             else if (path.GetComponent<Path>().tilePositionX == this.transform.position.x - 1
                 && path.GetComponent<Path>().tilePositionY == this.transform.position.y
-                && !!tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)])
+                && !tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)])
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 0) * speed * Time.deltaTime;

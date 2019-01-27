@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public uint playerHealth = 10;
     [SerializeField] public Vector3 spawn = new Vector3(1, 1, 0);
     [SerializeField] public GameObject waveScreen;
+    [SerializeField] public GameObject gameOverScreen;
     public int wave = 0;
     public bool paused;
     public bool canPurchase = true;
@@ -112,7 +113,8 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        Debug.Log("GAME OVER");
+        gameOverScreen.GetComponent<TextMeshProUGUI>().text = "Game Over!\nYou made it to level 0!";
+        gameOverScreen.gameObject.transform.parent.gameObject.SetActive(true);
     }
 
     public void advanceLevel()

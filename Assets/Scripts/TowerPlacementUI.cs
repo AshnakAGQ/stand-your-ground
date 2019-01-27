@@ -5,6 +5,7 @@ using UnityEngine;
 public class TowerPlacementUI : MonoBehaviour
 {
     SpriteRenderer sprite;
+    ResourceManager resourceManager;
     SpriteRenderer rangeIndicator;
     TowerAI settings;
     float range;
@@ -15,6 +16,8 @@ public class TowerPlacementUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        resourceManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<ResourceManager>();
+        resourceManager.canPurchase = false;
         settings = GetComponentInParent<TowerAI>();
         settings.enabled = false;
         range = settings.range;
@@ -43,6 +46,8 @@ public class TowerPlacementUI : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
+            resourceManager.canPurchase = true;
+            resourceManager.AddGold(settings.cost); //Remove Later
             Destroy(gameObject);
         }
     }
@@ -74,8 +79,9 @@ public class TowerPlacementUI : MonoBehaviour
     {
         transform.position = gridPosition;
         sprite.color = new Color(255, 255, 255, 1f);
-        GetComponentInParent<TowerAI>().enabled = true;
-        Instantiate(Resources.Load("Projectile Tower")); //Remove Later
+        settings.enabled = true;
+        resourceManager.canPurchase = true;
+        resourceManager.PurchaseItem(settings); //Remove Later
         enabled = false;
     }
 }

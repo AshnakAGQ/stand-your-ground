@@ -39,6 +39,7 @@ public class GabeCreep : MonoBehaviour
     void Spawn()
     {
         this.GetComponent<Rigidbody2D>().MovePosition(spawnPoint);
+        //this.transform.position = spawnPoint;
         spawned = true;
         targetPosition = spawnPoint;
     }
@@ -75,13 +76,16 @@ public class GabeCreep : MonoBehaviour
             if (!reachingEnd)
             {
                 this.GetComponent<Rigidbody2D>().MovePosition(targetPosition);
+                //this.transform.position = targetPosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                //this.transform.Translate(new Vector3(0, 0));
                 findNextMove();
             }
             else
             {
                 Debug.Log("got to end");
                 this.GetComponent<Rigidbody2D>().MovePosition(targetPosition);
+                //this.transform.position = targetPosition;
                 Destroy(gameObject);
             }
         }
@@ -95,12 +99,12 @@ public class GabeCreep : MonoBehaviour
         {
             Debug.Log("testing path");
             if (path.GetComponent<Path>().tilePositionX == this.transform.position.x + 1
-                //&& path.GetComponent<Path>().tilePositionX == this.transform.position.x
                 && path.GetComponent<Path>().tilePositionY == this.transform.position.y
                 && !path.GetComponent<Path>().visited)
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0) * speed * Time.deltaTime;
+                //this.transform.Translate(new Vector2(speed * Time.deltaTime, 0));
                 Debug.Log("found right");
                 return;
             }            
@@ -111,26 +115,27 @@ public class GabeCreep : MonoBehaviour
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 0) * speed * Time.deltaTime;
+                //this.transform.Translate(new Vector2(-speed * Time.deltaTime, 0));
                 Debug.Log("found left");
                 return;
             }
             else if (path.GetComponent<Path>().tilePositionY == this.transform.position.y + 1 
-                //&& path.GetComponent<Path>().tilePositionY == this.transform.position.y
                 && path.GetComponent<Path>().tilePositionX == this.transform.position.x
                 && !path.GetComponent<Path>().visited)
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1) * speed * Time.deltaTime;
+                //this.transform.Translate(new Vector2(0, speed * Time.deltaTime));
                 Debug.Log("found up");
                 return;
             }
             else if (path.GetComponent<Path>().tilePositionY == this.transform.position.y - 1
-                //&& path.GetComponent<Path>().tilePositionY == this.transform.position.y
                 && path.GetComponent<Path>().tilePositionX == this.transform.position.x
                 && !path.GetComponent<Path>().visited)
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, -1) * speed * Time.deltaTime;
+                //this.transform.Translate(new Vector2(0, -speed * Time.deltaTime));
                 Debug.Log("found down");
                 return;
             }

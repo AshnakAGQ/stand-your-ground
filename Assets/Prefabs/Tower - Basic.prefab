@@ -113,7 +113,7 @@ MonoBehaviour:
   projectileSpeed: 5
   range: 5
   cooldown: 5
-  cost: 200
+  cost: 5
   rangeIndicator: {fileID: 9042340033129219290}
 --- !u!60 &11203291816018927
 PolygonCollider2D:
@@ -132,7 +132,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.34}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.969697, y: 0.969697}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

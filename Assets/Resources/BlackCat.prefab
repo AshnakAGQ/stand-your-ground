@@ -76,6 +76,26 @@ PrefabInstance:
     - target: {fileID: 1786648422422105967, guid: bd4bceffa4fe68e428f5be0450e1b55d,
         type: 3}
       propertyPath: value
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786648422422105967, guid: bd4bceffa4fe68e428f5be0450e1b55d,
+        type: 3}
+      propertyPath: health
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786648422422105967, guid: bd4bceffa4fe68e428f5be0450e1b55d,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786648422422105967, guid: bd4bceffa4fe68e428f5be0450e1b55d,
+        type: 3}
+      propertyPath: speed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786648422422105967, guid: bd4bceffa4fe68e428f5be0450e1b55d,
+        type: 3}
+      propertyPath: damage
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 375617226946785428, guid: bd4bceffa4fe68e428f5be0450e1b55d,

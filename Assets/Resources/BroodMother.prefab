@@ -96,16 +96,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab6773a488e9b644984f035a6f19fc4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 150
-  maxSpeed: 50
-  speed: 50
+  health: 200
+  maxSpeed: 100
+  speed: 100
   dead: 0
   creepPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0}
+  deathSound: {fileID: 0}
   reachingEnd: 0
   value: 3
   paths: []
-  damage: 3
+  damage: 2
   level: {fileID: 0}
 --- !u!61 &375617226946785428
 BoxCollider2D:

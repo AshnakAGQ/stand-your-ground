@@ -7,8 +7,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private int totalCost = 5;
     [SerializeField] private int currentCost = 0;
     [SerializeField] private Vector3 spawn;
-    public GameObject[] creeps = new GameObject[6];
-    [SerializeField] public float size = 5;
+    public GameObject[] creeps = new GameObject[7];
+    [SerializeField] public float size = 6;
     bool spawning;
 
     [SerializeField] private float testTimer = 0;
@@ -40,7 +40,6 @@ public class Spawner : MonoBehaviour
     {
         if (testTimer >= testRate)
         {
-            Debug.Log("enter spawn wave");
             if (currentCost < totalCost)
             {
                 int randomNum = (int)Random.Range(0, size);

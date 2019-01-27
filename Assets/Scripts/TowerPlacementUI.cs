@@ -12,6 +12,7 @@ public class TowerPlacementUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponentInParent<TowerAI>().enabled = false;
         sprite = GetComponentInParent<SpriteRenderer>();
         sprite.color = new Color(0, 0, 0, .5f);
     }

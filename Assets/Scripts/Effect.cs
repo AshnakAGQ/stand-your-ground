@@ -7,12 +7,6 @@ public class Effect : MonoBehaviour
     private CreepAI target;
     public float duration = 1f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

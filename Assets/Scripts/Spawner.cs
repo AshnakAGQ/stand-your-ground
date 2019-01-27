@@ -40,7 +40,6 @@ public class Spawner : MonoBehaviour
     {
         if (testTimer >= testRate)
         {
-            Debug.Log("enter spawn wave");
             if (currentCost < totalCost)
             {
                 int randomNum = (int)Random.Range(0, size);

@@ -18,6 +18,9 @@ public class TowerAI : MonoBehaviour
     private float timer;
     private CreepAI target;
 
+    private AudioSource ShootSound;
+    private AudioSource ExplosionSound;
+
     
     // Start is called before the first frame update
     void Start()
@@ -29,6 +32,10 @@ public class TowerAI : MonoBehaviour
         timer = cooldown;
         idleRotation = transform.up;
         Idle();
+
+        ShootSound = GameObject.Find("ShootSound").GetComponent<AudioSource>();
+        ExplosionSound = GameObject.Find("ExplosionSound").GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -108,6 +115,7 @@ public class TowerAI : MonoBehaviour
 
         if (enemyFound && type == TOWER_TYPE.AOE)
         {
+            ExplosionSound.Play();
             AOE aoe = Instantiate(Resources.Load("AOE", typeof(AOE)), transform.position, Quaternion.identity) as AOE;
             aoe.gameObject.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
             aoe.maxSize = range;
@@ -134,6 +142,7 @@ public class TowerAI : MonoBehaviour
         init.speed = projectileSpeed;
         init.effect = effect;
         init.target = target;
+        ShootSound.Play();
     }
 
     void Idle()

@@ -13,6 +13,7 @@ public class CreepAI : MonoBehaviour
     protected bool spawned = false;
     [SerializeField] public Vector2 creepPosition;
     [SerializeField] public Vector2 targetPosition;
+    [SerializeField] public AudioSource deathSound;
     [SerializeField] protected bool reachingEnd;
     public int value = 1; 
     public Path[] paths;
@@ -131,6 +132,10 @@ public class CreepAI : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnDestroy()
+    {
+        deathSound.Play();
+    }
 
     void FindNextMove()
     {

@@ -5311,12 +5311,12 @@ PrefabInstance:
     - target: {fileID: 2787854185124872770, guid: 99666c6d879b4754aabc060ccc2bec25,
         type: 3}
       propertyPath: spawn.x
-      value: -8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2787854185124872770, guid: 99666c6d879b4754aabc060ccc2bec25,
         type: 3}
       propertyPath: spawn.y
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2787854185124872770, guid: 99666c6d879b4754aabc060ccc2bec25,
         type: 3}

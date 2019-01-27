@@ -9,7 +9,7 @@ public class Slow : Effect
     void Start()
     {
         duration = 5f;
-        speed = GetComponentInParent<CreepAI>().speed / 2;
+        speed = GetComponentInParent<CreepAI>().maxSpeed / 2;
     }
 
     // Update is called once per frame
@@ -18,7 +18,7 @@ public class Slow : Effect
         GetComponentInParent<CreepAI>().speed = speed;
         if (duration <= 0)
         {
-            GetComponentInParent<CreepAI>().speed = speed * 2;
+            GetComponentInParent<CreepAI>().speed = GetComponentInParent<CreepAI>().maxSpeed;
             Destroy(this);
         }
         duration -= Time.deltaTime;

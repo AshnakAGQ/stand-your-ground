@@ -65,9 +65,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'AOE Damage
+  m_text: 'Shrapnel Trap
 
-    200G'
+    150G'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0f7c8ca0bc3a9df46822c2200a943498, type: 2}
   m_sharedMaterial: {fileID: 21060015292082882, guid: 0f7c8ca0bc3a9df46822c2200a943498,
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5459304144716187411}
-    characterCount: 15
+    characterCount: 18
     spriteCount: 0
     spaceCount: 2
     wordCount: 3
@@ -313,11 +313,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Projectile Slow
+  m_text: 'Freeze Cannon
 
-    200G
-
-'
+    75G'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0f7c8ca0bc3a9df46822c2200a943498, type: 2}
   m_sharedMaterial: {fileID: 21060015292082882, guid: 0f7c8ca0bc3a9df46822c2200a943498,
@@ -387,9 +385,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1109288079078983477}
-    characterCount: 21
+    characterCount: 17
     spriteCount: 0
-    spaceCount: 3
+    spaceCount: 2
     wordCount: 3
     linkCount: 0
     lineCount: 2
@@ -478,9 +476,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'AOE DOT
+  m_text: 'Agent Orange
 
-    200G'
+    500G'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0f7c8ca0bc3a9df46822c2200a943498, type: 2}
   m_sharedMaterial: {fileID: 21060015292082882, guid: 0f7c8ca0bc3a9df46822c2200a943498,
@@ -550,7 +548,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 7925513788829111836}
-    characterCount: 12
+    characterCount: 17
     spriteCount: 0
     spaceCount: 2
     wordCount: 3
@@ -695,9 +693,11 @@ MonoBehaviour:
   PauseScreen: {fileID: 1533968740973666803}
   playerHealth: 10
   spawn: {x: 10, y: 14, z: 0}
+  wave: 0
   paused: 0
   canPurchase: 1
-  count: 0
+  testTimer: 0
+  testRate: 5
 --- !u!1 &2219590248136043489
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,7 +893,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Gold: 1000'
+  m_text: 'Gold: 100'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0f7c8ca0bc3a9df46822c2200a943498, type: 2}
   m_sharedMaterial: {fileID: 21060015292082882, guid: 0f7c8ca0bc3a9df46822c2200a943498,
@@ -963,7 +963,7 @@ MonoBehaviour:
   m_margin: {x: 356.58743, y: -2.6202266, z: 27.7598, w: -58.956646}
   m_textInfo:
     textComponent: {fileID: 0}
-    characterCount: 10
+    characterCount: 9
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -1265,9 +1265,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Projectile Damage
+  m_text: 'Standard Shooter
 
-    200G'
+    50G'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0f7c8ca0bc3a9df46822c2200a943498, type: 2}
   m_sharedMaterial: {fileID: 21060015292082882, guid: 0f7c8ca0bc3a9df46822c2200a943498,
@@ -1337,7 +1337,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 6487446947434187163}
-    characterCount: 22
+    characterCount: 20
     spriteCount: 0
     spaceCount: 2
     wordCount: 3
@@ -1558,9 +1558,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'AOE Slow
+  m_text: 'Snow Globe
 
-    200G'
+    250G'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0f7c8ca0bc3a9df46822c2200a943498, type: 2}
   m_sharedMaterial: {fileID: 21060015292082882, guid: 0f7c8ca0bc3a9df46822c2200a943498,
@@ -1630,7 +1630,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 9044759466591090046}
-    characterCount: 13
+    characterCount: 15
     spriteCount: 0
     spaceCount: 2
     wordCount: 3
@@ -2171,11 +2171,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Projectile DOT
+  m_text: 'Flame Sprayer
 
-    200G
-
-'
+    250G'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0f7c8ca0bc3a9df46822c2200a943498, type: 2}
   m_sharedMaterial: {fileID: 21060015292082882, guid: 0f7c8ca0bc3a9df46822c2200a943498,
@@ -2245,9 +2243,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5689648099964329411}
-    characterCount: 20
+    characterCount: 18
     spriteCount: 0
-    spaceCount: 3
+    spaceCount: 2
     wordCount: 3
     linkCount: 0
     lineCount: 2
@@ -2388,27 +2386,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 988306516434610763, guid: a041e147bc3ab0a42b8870e0e9b4cdd9,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 988306516434610763, guid: a041e147bc3ab0a42b8870e0e9b4cdd9,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 951104262791860327, guid: a041e147bc3ab0a42b8870e0e9b4cdd9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 7785628345180355749, guid: a041e147bc3ab0a42b8870e0e9b4cdd9,
+    - target: {fileID: 988306516434610763, guid: a041e147bc3ab0a42b8870e0e9b4cdd9,
         type: 3}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7785628345180355749, guid: a041e147bc3ab0a42b8870e0e9b4cdd9,
+    - target: {fileID: 988306516434610763, guid: a041e147bc3ab0a42b8870e0e9b4cdd9,
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
@@ -2417,6 +2405,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785628345180355749, guid: a041e147bc3ab0a42b8870e0e9b4cdd9,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785628345180355749, guid: a041e147bc3ab0a42b8870e0e9b4cdd9,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7544228850905382704, guid: a041e147bc3ab0a42b8870e0e9b4cdd9,
         type: 3}

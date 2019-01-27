@@ -74,6 +74,11 @@ public class CreepAI : MonoBehaviour
         }
     }
 
+    protected void OnDestroy()
+    {
+        GameObject.FindObjectOfType<GameManager>().AddGold(value);
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Path"))

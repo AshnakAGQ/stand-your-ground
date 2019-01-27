@@ -6,7 +6,7 @@ public class Level : MonoBehaviour
 {
     public float count = 0;
     [SerializeField] public uint playerHealth = 10;
-    [SerializeField] public Vector3 spawn = new Vector3(1, 1, -1);
+    [SerializeField] public Vector3 spawn = new Vector3(1, 1, 0);
 
     // Start is called before the first frame update
     void Awake()
@@ -35,7 +35,6 @@ public class Level : MonoBehaviour
             count++;
             Instantiate(Resources.Load("BroodMother"), spawn, Quaternion.identity);
         }
-        Debug.Log(playerHealth);
     }
 
     void StartLevel()

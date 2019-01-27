@@ -15,7 +15,7 @@ public class BroodMother : MonoBehaviour
     public uint value = 2;
     public Path[] paths;
     public List<bool> counting = new List<bool>();
-    [SerializeField] protected uint damage = 10;
+    [SerializeField] protected uint damage = 2;
 
 
 

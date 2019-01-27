@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7524164519858188239}
   - component: {fileID: 11203291816018927}
   m_Layer: 0
-  m_Name: Projectile Tower
+  m_Name: Tower - Basic
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  EffectName: Slow
+  EffectName: Effect
   projectileSpeed: 5
   range: 5
   cooldown: 5

@@ -2,46 +2,63 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CreepAI : MonoBehaviour
 {
     public float progress { get; private set; } = 0;
     [SerializeField] public float health = 100;
-    [SerializeField] private float speed = 5;
+    [SerializeField] protected float speed = 50;
     [SerializeField] public bool dead = false;
-    [SerializeField] public Vector2 spawnPoint = new Vector2(0, 0);
+    protected bool spawned = false;
+    [SerializeField] public Vector2 spawnPoint = new Vector2(1, 1);
     [SerializeField] public Vector2 creepPosition;
     [SerializeField] public Vector2 targetPosition;
     [SerializeField] protected bool reachingEnd;
+    public uint value = 1;
+    public Path[] paths;
+    public List<bool> counting = new List<bool>();
+    [SerializeField] protected uint damage = 1;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         Spawn();
+        paths = FindObjectsOfType<Path>();
+        counting.Add(true);
+        int firstCount = 0;
+        foreach (Path path in paths)
+        {
+            if (firstCount != 0)
+            {
+                counting.Add(false);
+            }
+            firstCount++;
+        }
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        creepPosition = transform.position;
         progress += Time.deltaTime * speed;
-        checkDeath();
-
+        creepPosition = transform.position;
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        move();
+        CheckDeath();
+        Move();
     }
 
-    void Spawn()
+    virtual public void Spawn()
     {
-        this.GetComponent<Rigidbody2D>().MovePosition(spawnPoint);
+        spawned = true;
         targetPosition = spawnPoint;
     }
 
-    void checkDeath()
+    void CheckDeath()
     {
         if (health <= 0)
         {
@@ -58,11 +75,11 @@ public class CreepAI : MonoBehaviour
             {
                 reachingEnd = true;
             }
-            collision.GetComponent<Path>().visited = true;
         }
     }
 
-    void move()
+
+    void Move()
     {
         Vector2 estimateBig = new Vector2(transform.position.x + .05f, transform.position.y + .05f);
         Vector2 estimateSmall = new Vector2(transform.position.x - .05f, transform.position.y - .05f);
@@ -73,54 +90,76 @@ public class CreepAI : MonoBehaviour
             {
                 this.GetComponent<Rigidbody2D>().MovePosition(targetPosition);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-                findNextMove();
+                FindNextMove();
             }
             else
             {
-                this.GetComponent<Rigidbody2D>().MovePosition(targetPosition);
-                this.transform.position = targetPosition;
-                Destroy(gameObject);
+                DamagePlayer();
             }
         }
     }
 
-    void findNextMove()
+
+    void DamagePlayer()
     {
-        GameObject[] paths = GameObject.FindGameObjectsWithTag("Path");
-        foreach (GameObject path in paths)
+        this.GetComponent<Rigidbody2D>().MovePosition(targetPosition);
+        Level l = FindObjectOfType<Level>();
+        if (damage > l.playerHealth)
+        {
+            l.playerHealth = 0;
+        }
+        else
+        {
+            l.playerHealth -= damage;
+        }
+        Destroy(gameObject);
+    }
+
+
+    void FindNextMove()
+    {
+
+        int loopCount = 0;
+
+        foreach (Path path in paths)
         {
             if (path.GetComponent<Path>().tilePositionX == this.transform.position.x + 1
                 && path.GetComponent<Path>().tilePositionY == this.transform.position.y
-                && !path.GetComponent<Path>().visited)
+                && !counting[loopCount])
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0) * speed * Time.deltaTime;
+                counting[loopCount] = true;
                 return;
             }
             else if (path.GetComponent<Path>().tilePositionX == this.transform.position.x - 1
                 && path.GetComponent<Path>().tilePositionY == this.transform.position.y
-                && !path.GetComponent<Path>().visited)
+                && !counting[loopCount])
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 0) * speed * Time.deltaTime;
+                counting[loopCount] = true;
                 return;
             }
             else if (path.GetComponent<Path>().tilePositionY == this.transform.position.y + 1
                 && path.GetComponent<Path>().tilePositionX == this.transform.position.x
-                && !path.GetComponent<Path>().visited)
+                && !counting[loopCount])
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1) * speed * Time.deltaTime;
+                counting[loopCount] = true;
                 return;
             }
             else if (path.GetComponent<Path>().tilePositionY == this.transform.position.y - 1
                 && path.GetComponent<Path>().tilePositionX == this.transform.position.x
-                && !path.GetComponent<Path>().visited)
+                && !counting[loopCount])
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, -1) * speed * Time.deltaTime;
+                counting[loopCount] = true;
                 return;
             }
+            loopCount++;
         }
     }
 

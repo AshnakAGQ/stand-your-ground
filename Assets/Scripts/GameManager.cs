@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public float count = 0;
     [SerializeField] public uint playerHealth = 10;
@@ -11,12 +11,12 @@ public class Level : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        
+
     }
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

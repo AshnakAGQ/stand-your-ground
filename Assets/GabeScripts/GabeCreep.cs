@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GabeCreep : MonoBehaviour
 {
-    public float progress { get; private set; } = 0;
     [SerializeField] public float health = 100;
     [SerializeField] protected float speed = 50;
     [SerializeField] public bool dead = false;
@@ -14,8 +14,9 @@ public class GabeCreep : MonoBehaviour
     [SerializeField] public Vector2 targetPosition;
     [SerializeField] protected bool reachingEnd;
     public uint value = 1;
-    private Path[] paths;
-    private List<bool> counting = new List<bool>();
+    public Path[] paths;
+    public List<bool> counting = new List<bool>();
+    [SerializeField] protected uint damage = 1;
     
 
 
@@ -24,7 +25,6 @@ public class GabeCreep : MonoBehaviour
     {
         Spawn();
         paths = FindObjectsOfType<Path>();
-
         counting.Add(true);
         int firstCount = 0;
         foreach (Path path in paths)
@@ -35,14 +35,12 @@ public class GabeCreep : MonoBehaviour
             }
             firstCount++;
         }
-        Debug.Log(counting[0]);
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        progress += Time.deltaTime * speed;
         creepPosition = transform.position;
     }
 
@@ -75,7 +73,6 @@ public class GabeCreep : MonoBehaviour
             {
                 reachingEnd = true;
             }
-            //collision.GetComponent<Path>().visited = true;
         }
     }
 
@@ -95,13 +92,26 @@ public class GabeCreep : MonoBehaviour
             }
             else
             {
-                this.GetComponent<Rigidbody2D>().MovePosition(targetPosition);
-                this.transform.position = targetPosition;
-                Destroy(gameObject);
+                DamagePlayer();
             }
         }
     }
 
+    
+    void DamagePlayer()
+    {
+        this.GetComponent<Rigidbody2D>().MovePosition(targetPosition);
+        Level l = FindObjectOfType<Level>();
+        if (damage > l.playerHealth)
+        {
+            l.playerHealth = 0;
+        }
+        else
+        {
+            l.playerHealth -= damage;
+        }
+        Destroy(gameObject);
+    }
     
 
     void FindNextMove()

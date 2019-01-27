@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 1232361542}
   - component: {fileID: 1232361541}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -611,6 +611,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
+  playerHealth: 10
+  spawn: {x: 1, y: 1, z: -1}
 --- !u!4 &1232361542
 Transform:
   m_ObjectHideFlags: 0

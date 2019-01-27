@@ -97,10 +97,14 @@ MonoBehaviour:
   health: 100
   speed: 50
   dead: 0
-  spawnPoint: {x: 0, y: 0}
+  spawnPoint: {x: 1, y: 1}
   creepPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0}
   reachingEnd: 0
+  value: 1
+  paths: []
+  counting: 
+  damage: 10
 --- !u!61 &375617226946785428
 BoxCollider2D:
   m_ObjectHideFlags: 0

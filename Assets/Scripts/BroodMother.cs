@@ -35,6 +35,7 @@ public class BroodMother : CreepAI
             }
             GameObject Baby1 = Instantiate(Resources.Load("RatCreep"),  new Vector2(intVector.x, intVector.y), Quaternion.identity) as GameObject;
             Baby1.GetComponent<RatCreep>().tileGrid = tileGrid;
+            level.AddGold(value);
             KillIt();
         }   
 

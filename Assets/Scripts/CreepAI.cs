@@ -73,6 +73,7 @@ public class CreepAI : MonoBehaviour
             dead = true;
             level = GameObject.FindObjectOfType<GameManager>();
             level.creepCount -= 1;
+            level.AddGold(value);
             Destroy(gameObject);
         }
     }

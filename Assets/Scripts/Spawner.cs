@@ -4,34 +4,40 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public List<CreepAI> creeps = new List<CreepAI>();
-    public int totalCost;
+    public int totalCost = 5;
     public int currentCost = 0;
-    public Vector3 spawn;
-    public GameObject[] gameObjects;
+    public Vector3 spawn = new Vector3 (10, 14, 0);
+    public GameObject[] creeps = new GameObject[6];
+    public float size = 5;
+
+    public float testTimer = 0;
+    public float testRate = 5;
 
     // Start is called before the first frame update
     void Start()
     {
-        spawn = transform.position;
-        totalCost = 3;
-        creeps.Add(new BroodMother());
-        creeps.Add(new CreepAI());
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void spawnWave()
+    public void SpawnWave()
     {
-        float size = creeps.Count - 1;
-        while (currentCost<totalCost)
+        if (testTimer >= testRate)
         {
-            int randoNum = (int) Random.Range(0, size);
-           // Instantiate(Resources.Load(creeps[randoNum]), spawn, Quaternion.identity);
+            while (currentCost < totalCost)
+            {
+                int randomNum = (int)Random.Range(0, size);
+                Debug.Log(creeps[randomNum]);
+                //if (creeps[randomNum].GetComponent<CreepAI>().value + currentCost <= totalCost)
+                //currentCost += Instantiate(creeps[randomNum], spawn, Quaternion.identity).GetComponent<CreepAI>().value;
+            }
+            testTimer = 0;
         }
+        else testTimer += Time.deltaTime;
     }
 }

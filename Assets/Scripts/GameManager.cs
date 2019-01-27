@@ -19,9 +19,18 @@ public class GameManager : MonoBehaviour
     public float testTimer = 0;
     public float testRate = 5;
 
+    public Spawner creepSpawner;
+
+
     void Start()
     {
         GUI.text = "Gold: " + StartingGold;
+    }
+
+    private void Awake()
+    {
+        creepSpawner = new Spawner();
+
     }
 
     // Update is called once per frame
@@ -42,7 +51,9 @@ public class GameManager : MonoBehaviour
             else Pause();
         }
 
-        Test();
+        creepSpawner.SpawnWave();
+
+        //Test();
     }
 
     public void PurchaseItem(TowerAI item)

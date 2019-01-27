@@ -6,7 +6,7 @@ public class TowerPlacementUI : MonoBehaviour
 {
     SpriteRenderer sprite;
     Color defaultColor;
-    ResourceManager resourceManager;
+    GameManager gameManager;
     SpriteRenderer rangeIndicator;
     TowerAI settings;
     float range;
@@ -19,8 +19,8 @@ public class TowerPlacementUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        resourceManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<ResourceManager>();
-        resourceManager.canPurchase = false;
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        gameManager.canPurchase = false;
         settings = GetComponentInParent<TowerAI>();
         settings.enabled = false;
         LBounds = GameObject.FindGameObjectWithTag("BoundsL").GetComponent<Transform>().position;
@@ -53,8 +53,8 @@ public class TowerPlacementUI : MonoBehaviour
 
         if (Input.GetMouseButtonUp(1))
         {
-            resourceManager.canPurchase = true;
-            resourceManager.AddGold(settings.cost); //Remove Later
+            gameManager.canPurchase = true;
+            gameManager.AddGold(settings.cost); //Remove Later
             Destroy(gameObject);
         }
     }
@@ -97,7 +97,7 @@ public class TowerPlacementUI : MonoBehaviour
         transform.position = gridPosition;
         sprite.color = defaultColor;
         settings.enabled = true;
-        resourceManager.ConfirmPurchase();
+        gameManager .ConfirmPurchase();
         Destroy(this);
     }
 }

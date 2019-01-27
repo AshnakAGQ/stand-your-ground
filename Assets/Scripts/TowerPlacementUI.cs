@@ -54,7 +54,6 @@ public class TowerPlacementUI : MonoBehaviour
         if (Input.GetMouseButtonUp(1))
         {
             gameManager.canPurchase = true;
-            gameManager.AddGold(settings.cost); //Remove Later
             Destroy(gameObject);
         }
     }
@@ -97,7 +96,7 @@ public class TowerPlacementUI : MonoBehaviour
         transform.position = gridPosition;
         sprite.color = defaultColor;
         settings.enabled = true;
-        gameManager .ConfirmPurchase();
+        gameManager.ConfirmPurchase();
         Destroy(this);
     }
 }

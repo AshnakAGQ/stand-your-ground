@@ -7,7 +7,8 @@ public class CreepAI : MonoBehaviour
 {
     public float progress { get; private set; } = 0;
     [SerializeField] public float health = 100;
-    [SerializeField] protected float speed = 50;
+    [SerializeField] public float maxSpeed = 50;
+    [SerializeField] public float speed = 50;
     [SerializeField] public bool dead = false;
     protected bool spawned = false;
     [SerializeField] public Vector2 creepPosition;

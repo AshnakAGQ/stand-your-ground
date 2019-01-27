@@ -95,16 +95,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7cf9d0f7ec75349b3eae22130aac0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 150
   maxSpeed: 50
   speed: 50
   dead: 0
   creepPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0}
+  deathSound: {fileID: 0}
   reachingEnd: 0
   value: 2
   paths: []
   damage: 2
+  level: {fileID: 0}
 --- !u!50 &9049638577592145440
 Rigidbody2D:
   serializedVersion: 4

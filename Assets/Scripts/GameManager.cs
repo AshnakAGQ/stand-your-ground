@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
     {
         if (testTimer >= testRate)
         {
-            Instantiate(Resources.Load("WhiteCat"), spawn, Quaternion.identity);
+            Instantiate(Resources.Load("BroodMother"), spawn, Quaternion.identity);
             testTimer = 0;
         }
         else testTimer += Time.deltaTime;

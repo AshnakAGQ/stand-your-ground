@@ -37,7 +37,7 @@ public class TowerPlacementUI : MonoBehaviour
     {
         canPlace = true;
 
-        GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
+        GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower"); //Remove later
         foreach (GameObject tower in towers)
         {
             if (tower.transform.position == gridPosition)
@@ -52,7 +52,7 @@ public class TowerPlacementUI : MonoBehaviour
         transform.position = gridPosition;
         sprite.color = new Color(255, 255, 255, 1f);
         GetComponentInParent<TowerAI>().enabled = true;
-        Instantiate(Resources.Load("Tower"));
+        Instantiate(Resources.Load("ProjectileTower"));
         enabled = false;
     }
 }

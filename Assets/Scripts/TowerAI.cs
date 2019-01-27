@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class TowerAI : MonoBehaviour
 {
+    enum TOWER_TYPE { projectile, AOE };
+    [SerializeField] private TOWER_TYPE type = TOWER_TYPE.projectile;
+    [SerializeField] public Effect effect;
+    [SerializeField] public float projectileSpeed;
     [SerializeField] private float range { get; set; } = 5f;
     [SerializeField] private float cooldown = 5f;
     private Vector3 idleRotation; 
     private float timer;
-    private GameObject target;
+    private CreepAI target;
+
     
     // Start is called before the first frame update
     void Start()
@@ -56,26 +61,37 @@ public class TowerAI : MonoBehaviour
         }
     }
 
-    bool TargetInRange(GameObject target)
+    bool TargetInRange(CreepAI target)
     {
         return Vector2.Distance(target.transform.position, transform.position) <= range;
     }
 
-    GameObject FindTarget()
+    CreepAI FindTarget()
     {
         float priority = 0;
-        GameObject newTarget = null;
+        CreepAI newTarget = null;
 
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Creep");
-        foreach (GameObject enemy in enemies)
+        CreepAI[] enemies = CreepAI.FindObjectsOfType<CreepAI>();
+        foreach (CreepAI enemy in enemies)
         {
             if (TargetInRange(enemy))
             {
-                float progress = enemy.GetComponent<GabeCreep>().progress;
-                if (progress > priority)
+                if (type == TOWER_TYPE.AOE)
                 {
-                    newTarget = enemy;
-                    priority = progress;
+                    if (timer >= cooldown)
+                    {
+                        Instantiate(effect, enemy.transform);
+                        timer = 0;
+                    }
+                }
+                else
+                {
+                    float progress = enemy.GetComponent<CreepAI>().progress;
+                    if (progress > priority)
+                    {
+                        newTarget = enemy;
+                        priority = progress;
+                    }
                 }
             }
         }
@@ -85,7 +101,11 @@ public class TowerAI : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log("Shooting at " + target.name);
+        GameObject proj = Instantiate(Resources.Load("Projectile", typeof(GameObject)), transform.position, Quaternion.identity) as GameObject;
+        Projectile init = proj.GetComponent<Projectile>();
+        init.speed = projectileSpeed;
+        init.effect = effect;
+        init.target = target;
     }
 
     void Idle()
@@ -93,3 +113,5 @@ public class TowerAI : MonoBehaviour
         transform.up = idleRotation;
     }
 }
+
+

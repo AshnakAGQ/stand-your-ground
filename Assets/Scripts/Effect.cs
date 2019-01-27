@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreepAI : MonoBehaviour
+public class Effect : MonoBehaviour
 {
-    public float progress { get; private set; } = 0;
-    private float speed = 5;
-    
+    private CreepAI target;
+    public float duration = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,8 +16,9 @@ public class CreepAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        progress += Time.deltaTime * speed;
+        Debug.Log("BAM");
+        if (duration <= 0)
+            Destroy(gameObject);
+        duration -= Time.deltaTime;
     }
-
-
 }

@@ -12,8 +12,8 @@ public class RatCreep : CreepAI
     {
         health = 100;
         speed = 50;
-        value = 1;
-        damage = 1;
+        value = 2;
+        damage = 3;
         Spawn();
     }
 

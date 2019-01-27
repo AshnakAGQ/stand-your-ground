@@ -15959,7 +15959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306cdf512bf51a340960ffc57f5beefe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalCost: 0
+  totalCost: 5
   currentCost: 0
   spawn: {x: 0, y: 0, z: 0}
   creeps:
@@ -15969,6 +15969,9 @@ MonoBehaviour:
   - {fileID: 1051575713389520402, guid: 65f2280ff48b77743b9583dab6e31fa8, type: 3}
   - {fileID: 1944236769719578104, guid: d9db2ebe79b8b3e42a6d62d4f4512e63, type: 3}
   - {fileID: 564263123353619165, guid: 37805e84c83e938499c6f4d56071e02d, type: 3}
+  size: 5
+  testTimer: 0
+  testRate: 5
 --- !u!4 &811326482
 Transform:
   m_ObjectHideFlags: 0
@@ -40108,6 +40111,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 8895085945441294411, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895085945441294411, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1930498028469161637, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1930498028469161637, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1930498028469161637, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1152088433822836551, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40218,6 +40246,36 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5689648099964329411, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689648099964329411, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925513788829111836, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925513788829111836, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209815178361773022, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209815178361773022, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1533968740973666803, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
         type: 3}
       propertyPath: m_IsActive
@@ -40257,21 +40315,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PurchaseItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 1930498028469161637, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1930498028469161637, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1930498028469161637, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3771011071018957027, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
         type: 3}
@@ -40332,46 +40375,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RaycastTarget
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7925513788829111836, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7925513788829111836, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8895085945441294411, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8895085945441294411, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689648099964329411, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689648099964329411, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209815178361773022, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209815178361773022, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2219590247670656611, guid: 5c0d3bd0dbe927b4b82200336daaa8cf, type: 3}

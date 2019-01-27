@@ -102,9 +102,9 @@ MonoBehaviour:
   creepPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0}
   reachingEnd: 0
-  value: 1
+  value: 2
   paths: []
-  damage: 1
+  damage: 2
 --- !u!50 &9049638577592145440
 Rigidbody2D:
   serializedVersion: 4

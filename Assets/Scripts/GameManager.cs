@@ -29,8 +29,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        creepSpawner = new Spawner();
-
+        
     }
 
     // Update is called once per frame
@@ -51,7 +50,7 @@ public class GameManager : MonoBehaviour
             else Pause();
         }
 
-        creepSpawner.SpawnWave();
+        //creepSpawner.SpawnWave();
 
         //Test();
     }

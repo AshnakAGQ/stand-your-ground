@@ -102,9 +102,9 @@ MonoBehaviour:
   creepPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0}
   reachingEnd: 0
-  value: 2
+  value: 3
   paths: []
-  damage: 2
+  damage: 3
 --- !u!61 &375617226946785428
 BoxCollider2D:
   m_ObjectHideFlags: 0

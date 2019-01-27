@@ -10,8 +10,8 @@ public class BroodMother : CreepAI
     {
         health = 150;
         speed = 50;
-        value = 2;
-        damage = 2;
+        value = 3;
+        damage = 3;
         Spawn();
     }
 

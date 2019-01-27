@@ -14,7 +14,7 @@ public class CreepAI : MonoBehaviour
     [SerializeField] public Vector2 creepPosition;
     [SerializeField] public Vector2 targetPosition;
     [SerializeField] protected bool reachingEnd;
-    public uint value = 1; 
+    public int value = 1; 
     public Path[] paths;
     public bool[,] tileGrid = new bool[30,20];
     [SerializeField] protected uint damage = 1;

@@ -11,6 +11,7 @@ public class TowerAI : MonoBehaviour
     [SerializeField] public float projectileSpeed = 5f;
     [SerializeField] public float range = 5f;
     [SerializeField] private float cooldown = 5f;
+    [SerializeField] public int cost = 200;
 
     public SpriteRenderer rangeIndicator;
     private Vector3 idleRotation; 

@@ -16,7 +16,8 @@ public class CreepAI : MonoBehaviour
     [SerializeField] protected bool reachingEnd;
     public uint value = 1; 
     public Path[] paths;
-    public List<bool> counting = new List<bool>();
+    //public List<bool> counting = new List<bool>();
+    private bool[,] tileGrid = new bool[20,20];
     [SerializeField] protected uint damage = 1;
 
 
@@ -26,15 +27,17 @@ public class CreepAI : MonoBehaviour
     {
         Spawn();
         paths = FindObjectsOfType<Path>();
-        counting.Add(true);
-        int firstCount = 0;
         foreach (Path path in paths)
         {
-            if (firstCount != 0)
-            {
-                counting.Add(false);
-            }
-            firstCount++;
+            tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)] = false;
+            
+            
+            
+            //if (firstCount != 0)
+            //{
+                //counting.Add(false);
+            //}
+            //firstCount++;
         }
     }
 
@@ -125,38 +128,38 @@ public class CreepAI : MonoBehaviour
         {
             if (path.GetComponent<Path>().tilePositionX == this.transform.position.x + 1
                 && path.GetComponent<Path>().tilePositionY == this.transform.position.y
-                && !counting[loopCount])
+                && !tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)])
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0) * speed * Time.deltaTime;
-                counting[loopCount] = true;
+                tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)] = true;
                 return;
             }
             else if (path.GetComponent<Path>().tilePositionX == this.transform.position.x - 1
                 && path.GetComponent<Path>().tilePositionY == this.transform.position.y
-                && !counting[loopCount])
+                && !!tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)])
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 0) * speed * Time.deltaTime;
-                counting[loopCount] = true;
+                tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)] = true;
                 return;
             }
             else if (path.GetComponent<Path>().tilePositionY == this.transform.position.y + 1
                 && path.GetComponent<Path>().tilePositionX == this.transform.position.x
-                && !counting[loopCount])
+                && !tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)])
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1) * speed * Time.deltaTime;
-                counting[loopCount] = true;
+                tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)] = true;
                 return;
             }
             else if (path.GetComponent<Path>().tilePositionY == this.transform.position.y - 1
                 && path.GetComponent<Path>().tilePositionX == this.transform.position.x
-                && !counting[loopCount])
+                && !tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)])
             {
                 targetPosition = path.GetComponent<Path>().tilePosition;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, -1) * speed * Time.deltaTime;
-                counting[loopCount] = true;
+                tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)] = true;
                 return;
             }
             loopCount++;

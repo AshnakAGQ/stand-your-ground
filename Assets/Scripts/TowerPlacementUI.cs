@@ -5,6 +5,9 @@ using UnityEngine;
 public class TowerPlacementUI : MonoBehaviour
 {
     SpriteRenderer sprite;
+    SpriteRenderer rangeIndicator;
+    TowerAI settings;
+    float range;
     Vector3Int gridPosition;
     [SerializeField] bool canPlace;
 
@@ -12,7 +15,12 @@ public class TowerPlacementUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponentInParent<TowerAI>().enabled = false;
+        settings = GetComponentInParent<TowerAI>();
+        settings.enabled = false;
+        range = settings.range;
+        rangeIndicator = GetComponentsInChildren<SpriteRenderer>()[1];
+        rangeIndicator.enabled = true;
+        rangeIndicator.transform.localScale  = new Vector3(range, range, 0) * 2;
         sprite = GetComponentInParent<SpriteRenderer>();
         sprite.color = new Color(0, 0, 0, .5f);
     }
@@ -31,6 +39,11 @@ public class TowerPlacementUI : MonoBehaviour
         if (canPlace && Input.GetMouseButtonDown(0))
         {
             Place();
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -62,7 +75,7 @@ public class TowerPlacementUI : MonoBehaviour
         transform.position = gridPosition;
         sprite.color = new Color(255, 255, 255, 1f);
         GetComponentInParent<TowerAI>().enabled = true;
-        Instantiate(Resources.Load("ProjectileTower"));
+        Instantiate(Resources.Load("Projectile Tower")); //Remove Later
         enabled = false;
     }
 }

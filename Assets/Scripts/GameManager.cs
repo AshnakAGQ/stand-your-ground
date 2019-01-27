@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int StartingGold = 0;
     [SerializeField] private TextMeshProUGUI GUI;
     [SerializeField] public GameObject PauseScreen;
-    [SerializeField] public uint playerHealth = 10;
+    [SerializeField] public int playerHealth = 10;
     [SerializeField] public Vector3 spawn = new Vector3(1, 1, 0);
     [SerializeField] public GameObject waveScreen;
     public int wave = 0;
@@ -59,6 +59,14 @@ public class GameManager : MonoBehaviour
 
     public void DamagePlayer(int damage)
     {
+        if (damage > playerHealth)
+        {
+            playerHealth = 0;
+        }
+        else
+        {
+            playerHealth -= damage;
+        }
         GUI.text = "HP: " + playerHealth + "\nGold: " + StartingGold;
     }
 

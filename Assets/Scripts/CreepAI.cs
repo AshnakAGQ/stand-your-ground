@@ -19,18 +19,20 @@ public class CreepAI : MonoBehaviour
     private bool[,] tileGrid = new bool[20,10];
     [SerializeField] protected uint damage = 1;
 
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        Spawn();
         paths = FindObjectsOfType<Path>();
         foreach (Path path in paths)
         {
             tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)] = false;
         }
         tileGrid[Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)] = true;
+    }
+
+    // Start is called before the first frame update
+    virtual public void Start()
+    {
+        Spawn();
     }
 
 
@@ -53,7 +55,7 @@ public class CreepAI : MonoBehaviour
         targetPosition = new Vector2(transform.position.x, transform.position.y);
     }
 
-    void CheckDeath()
+    virtual public void CheckDeath()
     {
         if (health <= 0)
         {

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1786648422422105967}
   - component: {fileID: 375617226946785428}
   - component: {fileID: 9049638577592145440}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Creep
   m_TagString: Creep
   m_Icon: {fileID: 0}
@@ -101,6 +101,10 @@ MonoBehaviour:
   creepPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0}
   reachingEnd: 0
+  value: 1
+  paths: []
+  counting: 
+  damage: 1
 --- !u!61 &375617226946785428
 BoxCollider2D:
   m_ObjectHideFlags: 0

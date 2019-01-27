@@ -17,7 +17,7 @@ TagManager:
   - 
   - 
   - Background
-  - 
+  - Creep
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 3018950653
+    locked: 0
+  - name: Creep
+    uniqueID: 1844975385
     locked: 0
   - name: Default
     uniqueID: 0

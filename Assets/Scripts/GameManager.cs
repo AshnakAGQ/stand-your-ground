@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        GUI.text = "Gold: " + StartingGold;
+        GUI.text = "HP: " + playerHealth + "\nGold: " + StartingGold;
     }
 
     private void Awake()
@@ -57,6 +57,11 @@ public class GameManager : MonoBehaviour
         //Test();
     }
 
+    public void DamagePlayer(int damage)
+    {
+        GUI.text = "HP: " + playerHealth + "\nGold: " + StartingGold;
+    }
+
     public void PurchaseItem(TowerAI item)
     {
         if (!canPurchase)
@@ -73,7 +78,7 @@ public class GameManager : MonoBehaviour
     public void ConfirmPurchase()
     {
         StartingGold -= currentItem.cost;
-        GUI.text = "Gold: " + StartingGold;
+        GUI.text = "HP: " + playerHealth + "\nGold: " + StartingGold;
         if (currentItem.cost <= StartingGold)
         {
             currentItem = Instantiate(currentItem);
@@ -91,7 +96,7 @@ public class GameManager : MonoBehaviour
     public void AddGold(int amount)
     {
         StartingGold += amount;
-        GUI.text = "Gold: " + StartingGold;
+        GUI.text = "HP: " + playerHealth + "\nGold: " + StartingGold;
     }
 
     public void MainMenu()

@@ -693,11 +693,14 @@ MonoBehaviour:
   PauseScreen: {fileID: 1533968740973666803}
   playerHealth: 10
   spawn: {x: 10, y: 14, z: 0}
+  waveScreen: {fileID: 8309966872937335020}
   wave: 0
   paused: 0
   canPurchase: 1
+  creepCount: 0
   testTimer: 0
   testRate: 5
+  creepSpawner: {fileID: 0}
 --- !u!1 &2219590248136043489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2621,13 +2624,19 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5720402802355675062}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8309966872937335020 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4336995980504110938, guid: 4d80dcaa2f916ce4fb77646d4d030de9,
+    type: 3}
+  m_PrefabInstance: {fileID: 5720402802355675062}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4688286368513591413 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1041131506308749251, guid: 4d80dcaa2f916ce4fb77646d4d030de9,
     type: 3}
   m_PrefabInstance: {fileID: 5720402802355675062}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8309966872937335020}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}

@@ -24,7 +24,7 @@ public class BroodMother : CreepAI
             //bool[,] tileGridCopy = this.tileGrid;
             Vector2 floatVector = new Vector2(transform.position.x, transform.position.y);
             Vector2 direction = GetComponent<Rigidbody2D>().velocity;
-            Vector2Int intVector = Vector2Int.RoundToInt(floatVector);
+            Vector2Int intVector;
             if (direction.x < 0 || direction.y < 0)
             {
                 intVector = Vector2Int.FloorToInt(floatVector);
@@ -33,9 +33,9 @@ public class BroodMother : CreepAI
             {
                 intVector = Vector2Int.CeilToInt(floatVector);
             }
-            //Vector2Int intVector = Vector2Int.RoundToInt(floatVector);
             GameObject Baby1 = Instantiate(Resources.Load("RatCreep"),  new Vector2(intVector.x, intVector.y), Quaternion.identity) as GameObject;
             Baby1.GetComponent<RatCreep>().tileGrid = tileGrid;
+            level.AddGold(value);
             KillIt();
         }   
 

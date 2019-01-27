@@ -11,10 +11,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject PauseScreen;
     [SerializeField] public uint playerHealth = 10;
     [SerializeField] public Vector3 spawn = new Vector3(1, 1, 0);
-    public int wave;
+    [SerializeField] public GameObject waveScreen;
+    public int wave = 0;
     public bool paused;
     public bool canPurchase = true;
     TowerAI currentItem;
+    [SerializeField] public uint creepCount = 0;
 
     public float testTimer = 0;
     public float testRate = 5;
@@ -108,11 +110,18 @@ public class GameManager : MonoBehaviour
         Debug.Log("GAME OVER");
     }
 
+    public void advanceLevel()
+    {
+        waveScreen.GetComponent<TextMeshProUGUI>().text = "Wave " + wave + " Complete!";
+        waveScreen.gameObject.transform.parent.gameObject.SetActive(true);
+        wave += 1;
+    }
+
     void Test()
     {
         if (testTimer >= testRate)
         {
-            Instantiate(Resources.Load("HumanCreep"), spawn, Quaternion.identity);
+            Instantiate(Resources.Load("BroodMother"), spawn, Quaternion.identity);
             testTimer = 0;
         }
         else testTimer += Time.deltaTime;

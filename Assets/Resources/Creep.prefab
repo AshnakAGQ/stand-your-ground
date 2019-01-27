@@ -101,10 +101,12 @@ MonoBehaviour:
   dead: 0
   creepPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0}
+  deathSound: {fileID: 0}
   reachingEnd: 0
   value: 1
   paths: []
   damage: 1
+  level: {fileID: 0}
 --- !u!61 &375617226946785428
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -122,7 +124,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.12, y: 0.29}
+    oldSize: {x: 0.24, y: 0.58}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

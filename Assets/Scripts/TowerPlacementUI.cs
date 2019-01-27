@@ -5,6 +5,7 @@ using UnityEngine;
 public class TowerPlacementUI : MonoBehaviour
 {
     SpriteRenderer sprite;
+    Color defaultColor;
     ResourceManager resourceManager;
     SpriteRenderer rangeIndicator;
     TowerAI settings;
@@ -25,7 +26,8 @@ public class TowerPlacementUI : MonoBehaviour
         rangeIndicator.enabled = true;
         rangeIndicator.transform.localScale  = new Vector3(range, range, 0) * 2;
         sprite = GetComponentInParent<SpriteRenderer>();
-        sprite.color = new Color(0, 0, 0, .5f);
+        defaultColor = sprite.color;
+        sprite.color = defaultColor - new Color(0, 0, 0, .5f);
     }
 
     // Update is called once per frame
@@ -36,8 +38,8 @@ public class TowerPlacementUI : MonoBehaviour
 
         CheckPlace();
 
-        if (canPlace)   sprite.color = new Color(255, 255, 255, .5f);
-        else            sprite.color = new Color(255, 0, 0, .5f);
+        if (canPlace) sprite.color = defaultColor - new Color(0, 0, 0, .5f);
+        else sprite.color = new Color(1, 1, 1, 1) - defaultColor + new Color(0, 0, 0, .5f);
 
         if (canPlace && Input.GetMouseButtonDown(0))
         {
@@ -78,7 +80,7 @@ public class TowerPlacementUI : MonoBehaviour
     void Place()
     {
         transform.position = gridPosition;
-        sprite.color = new Color(255, 255, 255, 1f);
+        sprite.color = defaultColor;
         settings.enabled = true;
         resourceManager.canPurchase = true;
         resourceManager.PurchaseItem(settings); //Remove Later

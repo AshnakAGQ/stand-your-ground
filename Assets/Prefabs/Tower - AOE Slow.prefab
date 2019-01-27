@@ -82,6 +82,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5078304035104192602, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c2f38162e837a4d4fbd7c0951fd51ff3,
+        type: 3}
+    - target: {fileID: 5078304035104192602, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11203291816018927, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11203291816018927, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11203291816018927, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11203291816018927, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: -0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: 11203291816018927, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
+      value: 0.00000004371139
+      objectReference: {fileID: 0}
+    - target: {fileID: 11203291816018927, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11203291816018927, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11203291816018927, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
+      value: 0.0000000059624403
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55, type: 3}
 --- !u!212 &3559991918728056479 stripped

@@ -18,7 +18,7 @@ public class CreepAI : MonoBehaviour
     public Path[] paths;
     public bool[,] tileGrid = new bool[30,20];
     [SerializeField] protected uint damage = 1;
-    private GameManager level;
+    public GameManager level;
 
     private void Awake()
     {

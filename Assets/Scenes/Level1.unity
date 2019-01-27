@@ -50263,5 +50263,20 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2219590248136043489, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671339185223114624, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 8287407699596604490, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c0d3bd0dbe927b4b82200336daaa8cf, type: 3}

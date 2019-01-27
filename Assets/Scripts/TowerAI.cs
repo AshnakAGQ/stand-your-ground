@@ -78,6 +78,7 @@ public class TowerAI : MonoBehaviour
     {
         float priority = 0;
         CreepAI newTarget = null;
+        bool enemyFound = false;
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Creep");
         foreach (GameObject enemy in enemies)
@@ -90,6 +91,7 @@ public class TowerAI : MonoBehaviour
                     if (timer >= cooldown)
                     {
                         enemy.gameObject.AddComponent(effect);
+                        enemyFound = true;
                     }
                 }
                 else
@@ -104,7 +106,13 @@ public class TowerAI : MonoBehaviour
             }
         }
 
-        if (type == TOWER_TYPE.AOE) timer = 0;
+        if (enemyFound && type == TOWER_TYPE.AOE)
+        {
+            AOE aoe = Instantiate(Resources.Load("AOE", typeof(AOE)), transform.position, Quaternion.identity) as AOE;
+            aoe.gameObject.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
+            aoe.maxSize = range;
+            timer = 0;
+        }
 
         return newTarget;
     }

@@ -97,8 +97,7 @@ public class TowerPlacementUI : MonoBehaviour
         transform.position = gridPosition;
         sprite.color = defaultColor;
         settings.enabled = true;
-        resourceManager.canPurchase = true;
-        resourceManager.PurchaseItem(settings); //Remove Later
+        resourceManager.ConfirmPurchase();
         enabled = false;
     }
 }

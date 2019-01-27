@@ -16,7 +16,7 @@ public class CreepAI : MonoBehaviour
     [SerializeField] protected bool reachingEnd;
     public uint value = 1; 
     public Path[] paths;
-    private bool[,] tileGrid = new bool[30,20];
+    public bool[,] tileGrid = new bool[30,20];
     [SerializeField] protected uint damage = 1;
 
     private void Awake()

@@ -15977,7 +15977,7 @@ MonoBehaviour:
   - {fileID: 564263123353619165, guid: 37805e84c83e938499c6f4d56071e02d, type: 3}
   size: 5
   testTimer: 0
-  testRate: 5
+  testRate: 2
 --- !u!4 &811326482
 Transform:
   m_ObjectHideFlags: 0

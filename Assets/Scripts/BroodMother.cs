@@ -8,14 +8,14 @@ public class BroodMother : CreepAI
     // Start is called before the first frame update
     override public void Start()
     {
-        health = 150;
+        health = 200;
         speed = 50;
         value = 3;
         damage = 3;
         Spawn();
     }
 
-
+    /*
     override public void CheckDeath()
     {
         if (health <= 0)
@@ -51,4 +51,5 @@ public class BroodMother : CreepAI
         GameObject Baby = (GameObject)Instantiate(Resources.Load("RatCreep"), new Vector2(Mathf.Ceil(transform.position.x), Mathf.Ceil(transform.position.y)), Quaternion.identity);
         Baby.GetComponent<RatCreep>().tileGrid = tileGridCopy;
     }
+    */
 }

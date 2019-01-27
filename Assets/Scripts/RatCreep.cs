@@ -10,10 +10,10 @@ public class RatCreep : CreepAI
     // Start is called before the first frame update
     override public void Start()
     {
-        health = 100;
+        health = 150;
         speed = 50;
         value = 2;
-        damage = 3;
+        damage = 2;
         Spawn();
     }
 

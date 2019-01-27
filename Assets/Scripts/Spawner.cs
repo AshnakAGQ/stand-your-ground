@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
     bool spawning;
 
     [SerializeField] private float testTimer = 0;
-    [SerializeField] private float testRate = 3;
+    [SerializeField] private float testRate = 2;
 
     private GameManager level;
 

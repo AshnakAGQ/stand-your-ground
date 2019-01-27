@@ -16,7 +16,8 @@ public class CreepAI : MonoBehaviour
     [SerializeField] protected bool reachingEnd;
     public uint value = 1;
     public Path[] paths;
-    public List<bool> counting = new List<bool>();
+    //public List<bool> counting = new List<bool>();
+    private bool[,] tileGrid = new bool[16,16];
     [SerializeField] protected uint damage = 1;
 
 
@@ -26,15 +27,18 @@ public class CreepAI : MonoBehaviour
     {
         Spawn();
         paths = FindObjectsOfType<Path>();
-        counting.Add(true);
         int firstCount = 0;
         foreach (Path path in paths)
         {
-            if (firstCount != 0)
-            {
-                counting.Add(false);
-            }
-            firstCount++;
+            tileGrid[int(path.tilePositionX), int(path.tilePositionY)] = false;
+            
+            
+            
+            //if (firstCount != 0)
+            //{
+                //counting.Add(false);
+            //}
+            //firstCount++;
         }
     }
 

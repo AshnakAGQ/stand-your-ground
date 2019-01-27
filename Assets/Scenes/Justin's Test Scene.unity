@@ -5291,5 +5291,22 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1238661154887507376, guid: 99666c6d879b4754aabc060ccc2bec25,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f7c8ca0bc3a9df46822c2200a943498,
+        type: 2}
+    - target: {fileID: 1238661154887507376, guid: 99666c6d879b4754aabc060ccc2bec25,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 21060015292082882, guid: 0f7c8ca0bc3a9df46822c2200a943498,
+        type: 2}
+    - target: {fileID: 1238661154887507376, guid: 99666c6d879b4754aabc060ccc2bec25,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99666c6d879b4754aabc060ccc2bec25, type: 3}

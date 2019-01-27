@@ -95,9 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  speed: 5
+  speed: 50
   dead: 0
-  spawnPoint: {x: 0, y: 0}
   creepPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0}
   reachingEnd: 0

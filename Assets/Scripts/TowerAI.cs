@@ -79,10 +79,11 @@ public class TowerAI : MonoBehaviour
         float priority = 0;
         CreepAI newTarget = null;
 
-        CreepAI[] enemies = CreepAI.FindObjectsOfType<CreepAI>();
-        foreach (CreepAI enemy in enemies)
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Creep");
+        foreach (GameObject enemy in enemies)
         {
-            if (TargetInRange(enemy))
+            CreepAI creep = enemy.GetComponent<CreepAI>() as CreepAI;
+            if (TargetInRange(creep))
             {
                 if (type == TOWER_TYPE.AOE)
                 {
@@ -97,7 +98,7 @@ public class TowerAI : MonoBehaviour
                     float progress = enemy.GetComponent<CreepAI>().progress;
                     if (progress > priority)
                     {
-                        newTarget = enemy;
+                        newTarget = creep;
                         priority = progress;
                     }
                 }

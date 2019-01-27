@@ -18,6 +18,7 @@ public class CreepAI : MonoBehaviour
     public Path[] paths;
     public bool[,] tileGrid = new bool[30,20];
     [SerializeField] protected uint damage = 1;
+    private GameManager level;
 
     private void Awake()
     {
@@ -70,13 +71,10 @@ public class CreepAI : MonoBehaviour
         if (health <= 0)
         {
             dead = true;
+            level = GameObject.FindObjectOfType<GameManager>();
+            level.creepCount -= 1;
             Destroy(gameObject);
         }
-    }
-
-    protected void OnDestroy()
-    {
-        GameObject.FindObjectOfType<GameManager>().AddGold(value);
     }
 
     void OnTriggerEnter2D(Collider2D collision)

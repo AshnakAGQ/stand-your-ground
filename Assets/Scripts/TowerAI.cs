@@ -71,7 +71,7 @@ public class TowerAI : MonoBehaviour
         {
             if (TargetInRange(enemy))
             {
-                float progress = enemy.GetComponent<CreepAI>().progress;
+                float progress = enemy.GetComponent<GabeCreep>().progress;
                 if (progress > priority)
                 {
                     newTarget = enemy;

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Creep
   - Tower
+  - Path
   layers:
   - Default
   - TransparentFX

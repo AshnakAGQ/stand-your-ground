@@ -15,8 +15,6 @@ public class RatCreep : CreepAI
         value = 1;
         damage = 1;
         Spawn();
-
-        Debug.Log("Rat Spawned!");
     }
 
 }

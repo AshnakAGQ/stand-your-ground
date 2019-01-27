@@ -98,6 +98,6 @@ public class TowerPlacementUI : MonoBehaviour
         sprite.color = defaultColor;
         settings.enabled = true;
         resourceManager.ConfirmPurchase();
-        enabled = false;
+        Destroy(this);
     }
 }

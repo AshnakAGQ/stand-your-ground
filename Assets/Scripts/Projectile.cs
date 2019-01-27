@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     [HideInInspector] public CreepAI target;
     public float speed = 5;
-    public Effect effect;
+    public System.Type effect;
     
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
     {
         if (collider.tag == "Creep")
         {
-            Instantiate(effect, collider.gameObject.transform);
+            collider.gameObject.AddComponent(effect);
             Destroy(gameObject);
         }
     }

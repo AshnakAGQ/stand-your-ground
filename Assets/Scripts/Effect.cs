@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Effect : MonoBehaviour
 {
-    private CreepAI target;
     public float duration = 1f;
 
     // Update is called once per frame
@@ -12,7 +11,7 @@ public class Effect : MonoBehaviour
     {
         Debug.Log("BAM");
         if (duration <= 0)
-            Destroy(gameObject);
+            Destroy(this);
         duration -= Time.deltaTime;
     }
 }

@@ -6,7 +6,8 @@ public class TowerAI : MonoBehaviour
 {
     enum TOWER_TYPE { projectile, AOE };
     [SerializeField] private TOWER_TYPE type = TOWER_TYPE.projectile;
-    [SerializeField] public Effect effect;
+    [SerializeField] public System.Type effect;
+    [SerializeField] public string EffectName = "Effect";
     [SerializeField] public float projectileSpeed;
     [SerializeField] private float range { get; set; } = 5f;
     [SerializeField] private float cooldown = 5f;
@@ -18,6 +19,7 @@ public class TowerAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        effect = System.Type.GetType(EffectName);
         timer = cooldown;
         idleRotation = transform.up;
         Idle();
@@ -80,7 +82,7 @@ public class TowerAI : MonoBehaviour
                 {
                     if (timer >= cooldown)
                     {
-                        Instantiate(effect, enemy.transform);
+                        enemy.gameObject.AddComponent(effect);
                         timer = 0;
                     }
                 }

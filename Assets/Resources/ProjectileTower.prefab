@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  effect: {fileID: 994350943934124802, guid: 1e8de977488a09b498fffb7223a2835e, type: 3}
+  EffectName: Damage
   projectileSpeed: 5
   cooldown: 5
 --- !u!114 &5078304035104192603

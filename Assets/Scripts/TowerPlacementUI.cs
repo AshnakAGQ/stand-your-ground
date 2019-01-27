@@ -38,10 +38,19 @@ public class TowerPlacementUI : MonoBehaviour
     {
         canPlace = true;
 
-        GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower"); //Remove later
+        GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower"); 
         foreach (GameObject tower in towers)
         {
-            if (tower.transform.position == gridPosition)
+            if (tower.transform.position.x == gridPosition.x && tower.transform.position.y == gridPosition.y)
+            {
+                canPlace = false;
+            }
+        }
+
+        GameObject[] paths = GameObject.FindGameObjectsWithTag("Path");
+        foreach (GameObject path in paths)
+        {
+            if (path.transform.position.x == gridPosition.x && path.transform.position.y == gridPosition.y)
             {
                 canPlace = false;
             }

@@ -6,10 +6,13 @@ public class TowerAI : MonoBehaviour
 {
     enum TOWER_TYPE { projectile, AOE };
     [SerializeField] private TOWER_TYPE type = TOWER_TYPE.projectile;
-    [SerializeField] public Effect effect;
-    [SerializeField] public float projectileSpeed;
-    [SerializeField] private float range { get; set; } = 5f;
+    [SerializeField] public System.Type effect;
+    [SerializeField] public string EffectName = "Effect";
+    [SerializeField] public float projectileSpeed = 5f;
+    [SerializeField] public float range = 5f;
     [SerializeField] private float cooldown = 5f;
+
+    public SpriteRenderer rangeIndicator;
     private Vector3 idleRotation; 
     private float timer;
     private CreepAI target;
@@ -18,6 +21,10 @@ public class TowerAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rangeIndicator = GetComponentsInChildren<SpriteRenderer>()[1];
+        rangeIndicator.gameObject.transform.localScale = new Vector3(range, range, 0) * 2;
+        rangeIndicator.enabled = false;
+        effect = System.Type.GetType(EffectName);
         timer = cooldown;
         idleRotation = transform.up;
         Idle();
@@ -80,7 +87,7 @@ public class TowerAI : MonoBehaviour
                 {
                     if (timer >= cooldown)
                     {
-                        Instantiate(effect, enemy.transform);
+                        enemy.gameObject.AddComponent(effect);
                         timer = 0;
                     }
                 }
@@ -97,6 +104,16 @@ public class TowerAI : MonoBehaviour
         }
 
         return newTarget;
+    }
+
+    private void OnMouseEnter()
+    {
+        if (enabled) rangeIndicator.enabled = true;
+    }
+
+    private void OnMouseExit()
+    {
+        if (enabled) rangeIndicator.enabled = false;
     }
 
     void Shoot()

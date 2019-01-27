@@ -109,10 +109,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  EffectName: Effect
+  EffectName: Damage
   projectileSpeed: 5
   range: 5
   cooldown: 5
+  cost: 200
   rangeIndicator: {fileID: 9042340033129219290}
 --- !u!60 &11203291816018927
 PolygonCollider2D:

@@ -10,11 +10,10 @@ public class CreepAI : MonoBehaviour
     [SerializeField] protected float speed = 50;
     [SerializeField] public bool dead = false;
     protected bool spawned = false;
-    [SerializeField] public Vector2 spawnPoint = new Vector2(1, 1);
     [SerializeField] public Vector2 creepPosition;
     [SerializeField] public Vector2 targetPosition;
     [SerializeField] protected bool reachingEnd;
-    public uint value = 1;
+    public uint value = 1; 
     public Path[] paths;
     public List<bool> counting = new List<bool>();
     [SerializeField] protected uint damage = 1;
@@ -55,7 +54,7 @@ public class CreepAI : MonoBehaviour
     virtual public void Spawn()
     {
         spawned = true;
-        targetPosition = spawnPoint;
+        targetPosition = new Vector2(transform.position.x, transform.position.y);
     }
 
     void CheckDeath()

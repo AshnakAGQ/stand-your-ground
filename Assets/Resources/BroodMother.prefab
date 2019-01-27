@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5530979601866999370}
   - component: {fileID: 6689268063668487820}
-  - component: {fileID: 5181836904927891142}
+  - component: {fileID: 3672258225037309341}
   - component: {fileID: 375617226946785428}
   - component: {fileID: 9049638577592145440}
   m_Layer: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5181836904927891142
+--- !u!114 &3672258225037309341
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,20 +91,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 7561876301090155542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84945f8eb702fd84e877f3c1266b7b92, type: 3}
+  m_Script: {fileID: 11500000, guid: ab6773a488e9b644984f035a6f19fc4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 150
   speed: 50
   dead: 0
   spawnPoint: {x: 1, y: 1}
   creepPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0}
   reachingEnd: 0
-  value: 1
+  value: 2
   paths: []
   counting: 
-  damage: 10
+  damage: 2
 --- !u!61 &375617226946785428
 BoxCollider2D:
   m_ObjectHideFlags: 0

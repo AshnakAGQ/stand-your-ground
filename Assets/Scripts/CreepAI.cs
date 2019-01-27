@@ -16,7 +16,7 @@ public class CreepAI : MonoBehaviour
     [SerializeField] protected bool reachingEnd;
     public uint value = 1; 
     public Path[] paths;
-    private bool[,] tileGrid = new bool[20,10];
+    public bool[,] tileGrid = new bool[20,10];
     [SerializeField] protected uint damage = 1;
 
     private void Awake()
@@ -78,10 +78,15 @@ public class CreepAI : MonoBehaviour
 
     void Move()
     {
-        Vector2 estimateBig = new Vector2(transform.position.x + .05f, transform.position.y + .05f);
-        Vector2 estimateSmall = new Vector2(transform.position.x - .05f, transform.position.y - .05f);
-        if (targetPosition.x <= estimateBig.x && targetPosition.y <= estimateBig.y
-            && targetPosition.x >= estimateSmall.x && targetPosition.y >= estimateSmall.y)
+        Vector2 estimateBigX = new Vector2(transform.position.x + .05f, transform.position.y);
+        Vector2 estimateBigY = new Vector2(transform.position.x, transform.position.y + .05f);
+        Vector2 estimateSmallX = new Vector2(transform.position.x - .05f, transform.position.y);
+        Vector2 estimateSmallY = new Vector2(transform.position.x, transform.position.y - .05f);
+
+        if (((targetPosition.x <= estimateBigX.x && targetPosition.y == estimateBigX.y 
+            || (targetPosition.y <= estimateBigY.y && targetPosition.x == estimateBigY.x))
+            && ((targetPosition.x >= estimateSmallX.x && targetPosition.y == estimateSmallX.y) 
+            || (targetPosition.y >= estimateSmallY.y && targetPosition.x == estimateSmallY.x))))
         {
             if (!reachingEnd)
             {
@@ -89,7 +94,7 @@ public class CreepAI : MonoBehaviour
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 FindNextMove();
             }
-            else
+            else if(reachingEnd)
             {
                 DamagePlayer();
             }
@@ -115,8 +120,6 @@ public class CreepAI : MonoBehaviour
 
     void FindNextMove()
     {
-
-        int loopCount = 0;
 
         foreach (Path path in paths)
         {
@@ -156,7 +159,6 @@ public class CreepAI : MonoBehaviour
                 tileGrid[Mathf.RoundToInt(path.tilePositionX), Mathf.RoundToInt(path.tilePositionY)] = true;
                 return;
             }
-            loopCount++;
         }
     }
 

@@ -30,17 +30,20 @@ public class GameManager : MonoBehaviour
         {
             StartLevel();
         }
-        else if (Time.realtimeSinceStartup >= 5 && Time.realtimeSinceStartup <= 6 && count == 1)
+        else if (Time.time >= 5 && Time.time <= 6 && count == 1)
         {
             count++;
-            Instantiate(Resources.Load("Creep"), spawn, Quaternion.identity);
+            Instantiate(Resources.Load("BroodMother"), spawn, Quaternion.identity);
+            Instantiate(Resources.Load("BroodMother"), spawn, Quaternion.identity);
+            Instantiate(Resources.Load("BroodMother"), spawn, Quaternion.identity);
+            Instantiate(Resources.Load("BroodMother"), spawn, Quaternion.identity);
         }
     }
 
     void StartLevel()
     {
         count++;
-        Instantiate(Resources.Load("Creep"), spawn, Quaternion.identity);
+        Instantiate(Resources.Load("RatCreep"), spawn, Quaternion.identity);
 
     }
 

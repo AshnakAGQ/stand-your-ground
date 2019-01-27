@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public List<string> creeps = new List<string>();
+    public List<CreepAI> creeps = new List<CreepAI>();
     public int totalCost;
     public int currentCost = 0;
     public Vector3 spawn;
+    public GameObject[] gameObjects;
 
     // Start is called before the first frame update
     void Start()
     {
         spawn = transform.position;
         totalCost = 3;
-        creeps.Add("BroodMother");
+        creeps.Add(new BroodMother());
+        creeps.Add(new CreepAI());
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class Spawner : MonoBehaviour
         while (currentCost<totalCost)
         {
             int randoNum = (int) Random.Range(0, size);
-            Instantiate(Resources.Load(creeps[randoNum]), spawn, Quaternion.identity);
+           // Instantiate(Resources.Load(creeps[randoNum]), spawn, Quaternion.identity);
         }
     }
 }

@@ -92,7 +92,7 @@ public class BroodMother : MonoBehaviour
     void DamagePlayer()
     {
         this.GetComponent<Rigidbody2D>().MovePosition(targetPosition);
-        Level l = FindObjectOfType<Level>();
+        GameManager l = FindObjectOfType<GameManager>();
         if (damage > l.playerHealth)
         {
             l.playerHealth = 0;

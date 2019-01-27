@@ -100,7 +100,7 @@ public class RatCreep : MonoBehaviour
     void DamagePlayer()
     {
         this.GetComponent<Rigidbody2D>().MovePosition(targetPosition);
-        Level l = FindObjectOfType<Level>();
+        GameManager l = FindObjectOfType<GameManager>();
         l.playerHealth -= damage;
         Destroy(gameObject);
     }

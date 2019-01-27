@@ -11,10 +11,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject PauseScreen;
     [SerializeField] public uint playerHealth = 10;
     [SerializeField] public Vector3 spawn = new Vector3(1, 1, 0);
+    public int wave;
     public bool paused;
     public bool canPurchase = true;
-    public float count = 0;
     TowerAI currentItem;
+
+    public float testTimer = 0;
+    public float testRate = 5;
 
     void Start()
     {
@@ -39,7 +42,7 @@ public class GameManager : MonoBehaviour
             else Pause();
         }
 
-        //Test();
+        Test();
     }
 
     public void PurchaseItem(TowerAI item)
@@ -81,6 +84,7 @@ public class GameManager : MonoBehaviour
 
     public void MainMenu()
     {
+        Pause();
         SceneManager.LoadScene("Main Menu");
     }
 
@@ -96,15 +100,11 @@ public class GameManager : MonoBehaviour
 
     void Test()
     {
-        count++;
-        Instantiate(Resources.Load("WhiteCat"), spawn, Quaternion.identity);
-        if (Time.time >= 5 && Time.time <= 6 && count == 1)
+        if (testTimer >= testRate)
         {
-            count++;
-            Instantiate(Resources.Load("BroodMother"), spawn, Quaternion.identity);
-            Instantiate(Resources.Load("BroodMother"), spawn, Quaternion.identity);
-            Instantiate(Resources.Load("BroodMother"), spawn, Quaternion.identity);
-            Instantiate(Resources.Load("BroodMother"), spawn, Quaternion.identity); 
-        } 
+            Instantiate(Resources.Load("WhiteCat"), spawn, Quaternion.identity);
+            testTimer = 0;
+        }
+        else testTimer += Time.deltaTime;
     }
 }

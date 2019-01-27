@@ -16,7 +16,7 @@ public class CreepAI : MonoBehaviour
     [SerializeField] protected bool reachingEnd;
     public uint value = 1; 
     public Path[] paths;
-    public bool[,] tileGrid = new bool[20,10];
+    private bool[,] tileGrid = new bool[30,20];
     [SerializeField] protected uint damage = 1;
 
     private void Awake()
@@ -41,6 +41,16 @@ public class CreepAI : MonoBehaviour
     {
         progress += Time.deltaTime * speed;
         creepPosition = transform.position;
+    }
+
+    protected void LateUpdate()
+    {
+        Vector2 test = GetComponent<Rigidbody2D>().velocity;
+    
+        if (test.x > 0) GetComponent<Animator>().SetInteger("direction", 0);
+        else if (test.x < 0) GetComponent<Animator>().SetInteger("direction", 2);
+        else if (test.y > 0) GetComponent<Animator>().SetInteger("direction", 1);
+        else if (test.y < 0) GetComponent<Animator>().SetInteger("direction", 3);
     }
 
     void FixedUpdate()

@@ -90,7 +90,6 @@ public class TowerAI : MonoBehaviour
                     if (timer >= cooldown)
                     {
                         enemy.gameObject.AddComponent(effect);
-                        timer = 0;
                     }
                 }
                 else
@@ -104,6 +103,8 @@ public class TowerAI : MonoBehaviour
                 }
             }
         }
+
+        if (type == TOWER_TYPE.AOE) timer = 0;
 
         return newTarget;
     }

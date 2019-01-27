@@ -85,7 +85,33 @@ PrefabInstance:
     - target: {fileID: 5078304035104192602, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
         type: 3}
       propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078304035104192602, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 933cf5b1ef67dcb419ac208a3da87788,
+        type: 3}
+    - target: {fileID: 5078304035104192602, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: m_Color.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11203291816018927, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 11203291816018927, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 11203291816018927, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55, type: 3}

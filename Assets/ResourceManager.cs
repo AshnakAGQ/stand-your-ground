@@ -15,7 +15,7 @@ public class ResourceManager : MonoBehaviour
     }
 
     public void PurchaseItem(TowerAI item)
-    {
+    {   
         if (canPurchase && item.cost <= StartingGold)
         {
             Instantiate(item);

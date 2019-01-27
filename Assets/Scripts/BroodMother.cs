@@ -22,7 +22,9 @@ public class BroodMother : CreepAI
         {
             dead = true;
             bool[,] tileGridCopy = this.tileGrid;
-            GameObject Baby1 = Instantiate(Resources.Load("RatCreep"), new Vector2(Mathf.Ceil(transform.position.x), Mathf.Ceil(transform.position.y)), Quaternion.identity) as GameObject;
+            Vector2 floatVector = new Vector2(Mathf.Ceil(transform.position.x), Mathf.Ceil(transform.position.y));
+            Vector2Int intVector = Vector2Int.RoundToInt(floatVector);
+            GameObject Baby1 = Instantiate(Resources.Load("RatCreep"),  new Vector2(intVector.x, intVector.y), Quaternion.identity) as GameObject;
             Baby1.GetComponent<RatCreep>().tileGrid = tileGridCopy;
             KillIt();   
         }   

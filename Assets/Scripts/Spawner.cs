@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Vector3 spawn;
     public GameObject[] creeps = new GameObject[7];
     [SerializeField] public float size = 6;
-    bool spawning;
+    [SerializeField] bool spawning;
 
     [SerializeField] private float testTimer = 0;
     [SerializeField] private float testRate = 2;

@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 5f;
+        Time.timeScale = 1.5f;
         GUI.text = "HP: " + playerHealth + "\nGold: " + StartingGold;
     }
 

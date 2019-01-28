@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private int StartingGold = 0;
-    [SerializeField] private TextMeshProUGUI GUI;
+    [SerializeField] public TextMeshProUGUI GUI;
     [SerializeField] public GameObject PauseScreen;
     [SerializeField] public int playerHealth = 10;
     [SerializeField] public Vector3 spawn = new Vector3(1, 1, 0);

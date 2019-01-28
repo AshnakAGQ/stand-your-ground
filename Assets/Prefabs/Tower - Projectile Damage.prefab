@@ -22,6 +22,11 @@ PrefabInstance:
       propertyPath: EffectName
       value: Damage
       objectReference: {fileID: 0}
+    - target: {fileID: 7524164519858188239, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
+        type: 3}
+      propertyPath: cost
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5078304035104192602, guid: e7dbb08d3fba25f45bbf52c7eb1c9b55,
         type: 3}
       propertyPath: m_Color.r

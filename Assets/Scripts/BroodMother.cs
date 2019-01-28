@@ -9,7 +9,8 @@ public class BroodMother : CreepAI
     override public void Start()
     {
         health = 200;
-        speed = 50;
+        speed = 100;
+        maxSpeed = 100;
         value = 3;
         damage = 3;
         Spawn();

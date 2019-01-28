@@ -11,7 +11,8 @@ public class RatCreep : CreepAI
     override public void Start()
     {
         health = 150;
-        speed = 50;
+        speed = 100;
+        maxSpeed = 100;
         value = 2;
         damage = 2;
         Spawn();

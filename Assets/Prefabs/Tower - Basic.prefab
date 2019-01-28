@@ -111,7 +111,7 @@ MonoBehaviour:
   type: 0
   EffectName: Effect
   projectileSpeed: 5
-  range: 5
+  range: 4
   cooldown: 5
   cost: 5
   rangeIndicator: {fileID: 9042340033129219290}

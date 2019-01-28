@@ -41221,12 +41221,17 @@ PrefabInstance:
     - target: {fileID: 2219590249649199251, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
         type: 3}
       propertyPath: m_text
-      value: 'Gold: 10'
+      value: 'Gold: 20'
       objectReference: {fileID: 0}
     - target: {fileID: 2219590249649199251, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219590249649199251, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6487446947434187163, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
         type: 3}
@@ -41243,7 +41248,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Standard Shooter
 
-        5G'
+        10G'
       objectReference: {fileID: 0}
     - target: {fileID: 6487446947434187163, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
         type: 3}
@@ -41265,7 +41270,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Freeze Cannon
 
-        7G'
+        20G'
       objectReference: {fileID: 0}
     - target: {fileID: 1109288079078983477, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
         type: 3}
@@ -41287,7 +41292,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Shrapnel Trap
 
-        15G'
+        30G'
       objectReference: {fileID: 0}
     - target: {fileID: 5459304144716187411, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
         type: 3}
@@ -41309,7 +41314,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Snow Globe
 
-        25G'
+        50G'
       objectReference: {fileID: 0}
     - target: {fileID: 9044759466591090046, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
         type: 3}
@@ -41331,7 +41336,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Flame Sprayer
 
-        25G'
+        35G'
       objectReference: {fileID: 0}
     - target: {fileID: 5689648099964329411, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
         type: 3}
@@ -41353,7 +41358,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Agent Orange
 
-        50G'
+        100G'
       objectReference: {fileID: 0}
     - target: {fileID: 7925513788829111836, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
         type: 3}
@@ -41373,7 +41378,7 @@ PrefabInstance:
     - target: {fileID: 2976167762882430817, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
         type: 3}
       propertyPath: StartingGold
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1533968740973666803, guid: 5c0d3bd0dbe927b4b82200336daaa8cf,
         type: 3}

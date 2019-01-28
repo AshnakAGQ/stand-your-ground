@@ -74,6 +74,7 @@ public class CreepAI : MonoBehaviour
             level = GameObject.FindObjectOfType<GameManager>();
             level.creepCount -= 1;
             level.AddGold(value);
+            gameObject.GetComponent<AudioSource>().Play();
             Destroy(gameObject);
         }
     }
@@ -123,11 +124,6 @@ public class CreepAI : MonoBehaviour
         l.DamagePlayer(damage);
         l.creepCount -= 1;
         Destroy(gameObject);
-    }
-
-    private void OnDestroy()
-    {
-        gameObject.GetComponent<AudioSource>().Play();
     }
 
     void FindNextMove()

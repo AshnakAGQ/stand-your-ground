@@ -108,5 +108,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1352921855065935735, guid: bd4bceffa4fe68e428f5be0450e1b55d,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd4bceffa4fe68e428f5be0450e1b55d, type: 3}

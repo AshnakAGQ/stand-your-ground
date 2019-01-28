@@ -14,6 +14,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float testTimer = 0;
     [SerializeField] private float testRate = 2;
 
+    private AudioSource level_passSound;
+
     private GameManager level;
 
     // Start is called before the first frame update
@@ -21,6 +23,7 @@ public class Spawner : MonoBehaviour
     {
         spawn = transform.position;
         spawning = true;
+        level_passSound = GameObject.Find("level_passSound").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,6 +37,7 @@ public class Spawner : MonoBehaviour
         totalCost += totalCost * (int) Mathf.Log10(level.wave);
         currentCost = 0;
         spawning = true;
+        level_passSound.Play();
     }
 
     public void SpawnWave()
